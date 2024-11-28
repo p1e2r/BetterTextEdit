@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Gradient Background</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      text-align: center;
+    }
+
+    /* Smooth Dark Gradient Background */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, black, #1a1a1a, black);
+      animation: gradient-shift 6s infinite;
+      z-index: -1;
+    }
+
+    @keyframes gradient-shift {
+      0% {
+        background: linear-gradient(90deg, black, #1a1a1a, black);
+      }
+      50% {
+        background: linear-gradient(90deg, #1a1a1a, black, #1a1a1a);
+      }
+      100% {
+        background: linear-gradient(90deg, black, #1a1a1a, black);
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .button-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    a {
+      position: relative;
+      display: inline-block;
+      background: #1a1a1a;
+      color: white;
+      text-decoration: none;
+      padding: 15px 30px;
+      font-size: 1rem;
+      border-radius: 30px;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    a:hover {
+      background: #2c2c2c;
+    }
+
+    .button-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet, red);
+      z-index: 0;
+      filter: blur(8px);
+      border-radius: 35px;
+      animation: rgb-move 2s linear infinite;
+      background-size: 300%;
+    }
+
+    @keyframes rgb-move {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Boring Website</h1>
+    <p>Click the button below to download something exciting (or boring).</p>
+    <div class="button-wrapper">
+      <a href="example-file.txt" download>Download Now</a>
+    </div>
+  </div>
+</body>
+</html>
