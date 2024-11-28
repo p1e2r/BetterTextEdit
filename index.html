@@ -15,6 +15,7 @@
       height: 100vh;
       color: white;
       text-align: center;
+      flex-direction: column; /* Stack elements vertically */
     }
 
     /* Smooth Dark Gradient Background */
@@ -45,6 +46,7 @@
     .container {
       position: relative;
       z-index: 1;
+      margin-top: 20px;
     }
 
     h1 {
@@ -60,6 +62,7 @@
     .button-wrapper {
       position: relative;
       display: inline-block;
+      margin-bottom: 20px; /* Adds space between buttons */
     }
 
     a {
@@ -115,8 +118,20 @@
     <h1>Welcome to the BetterTextEdit website</h1>
     <p>Click the button below to download BetterTextEdit.</p>
     <p class="pyqt-sign">Note: This application needs PyQt5 to run.</p>
+
+    <!-- Download Button -->
     <div class="button-wrapper">
       <a href="BetterTextEdit.py" download>Download Now</a>
+    </div>
+
+    <!-- Install PyQt5 Button -->
+    <div class="button-wrapper">
+      <a href="https://pypi.org/project/PyQt5/#:~:text=PyQt5%20is%20a%20comprehensive%20set,platforms%20including%20iOS%20and%20Android" target="_blank">Install PyQt5</a>
+    </div>
+
+    <!-- GitHub Button -->
+    <div class="button-wrapper">
+      <a href="https://github.com/p1e2r/BetterTextEdit/tree/main" target="_blank">Visit GitHub</a>
     </div>
   </div>
 </body>
